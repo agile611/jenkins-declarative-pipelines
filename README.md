@@ -1,4 +1,6 @@
-# Overview
+[![Agile611](https://www.agile611.com/wp-content/uploads/2020/09/cropped-logo-header.png)](http://www.agile611.com/)
+
+# Agile611 Jenkins Declarative Pipelines
 
 This is the repo to play and test Jenkins Declarative Pipelines.
 
@@ -27,17 +29,18 @@ Environment selection
 ## 06-Saucelabs-Example
 A Saucelabs browser selection
 
-## Support
+## Licencia
 
-This tutorial is released into the public domain by ITNove under WTFPL.
+Este proyecto está publicado bajo la licencia MIT. Modifica según tus necesidades.
 
-[![WTFPL](http://www.wtfpl.net/wp-content/uploads/2012/12/wtfpl-badge-1.png)](http://www.wtfpl.net/)
+Este tutorial ha sido publicado por [Agile611](http://www.agile611.com/) bajo la licencia Creative Commons Atribución-NoComercial 4.0 Internacional.
 
-This README file was originally written by [Guillem Hernández Sola](https://www.linkedin.com/in/guillemhernandezsola/) and is likewise released into the public domain.
+[![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC_BY--NC_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc/4.0/)
 
-Please contact ITNove for further details.
 
-* ITNOVE a Cynertia Consulting
-* Passeig de Gràcia 110, 4rt 2a
-* 08008 Barcelona
-* T: 93 184 53 44
+Este `README` fue originalmente escrito por [Guillem Hernández Sola](https://www.linkedin.com/in/guillemhs/) y también se publica en el dominio público.
+
+Contacta con Agile611 para más detalles.
+- [Agile611](http://www.agile611.com/)
+- Laureà Miró 309
+- 08950 Esplugues de Llobregat (Barcelona)
