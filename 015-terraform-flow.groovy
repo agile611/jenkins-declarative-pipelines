@@ -3,6 +3,7 @@ pipeline{
     
     options{
         timeout(time: 1, unit: 'MINUTES') //Limita la ejecución del pipeline a 1 minuto
+        timestamps() //Agrega timestamps a los logs para mejor seguimiento
     }
     
     stages{
