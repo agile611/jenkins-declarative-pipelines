@@ -1,22 +1,22 @@
 pipeline {
     agent any
     tools {
-        maven "maven_jenkins"
+        maven "maven_363"
     }
     stages {
         stage('Checkout') {
             steps {
-                git url: 'https://github.com/Gromenaware/corball-test-automation-demo.git'
+                git url: 'https://github.com/jglick/simple-maven-project-with-tests.git'
             }
         }
         stage('Build') {
             steps {
-                sh 'mvn compile -DskipTests'
+                sh 'mvn clean package'
             }
         }
         stage('Test') {
             steps {
-                sh 'mvn -Dtest=WebDriverTest -Dbrowser=chrome -Dhub=http://selgp:8b819d9d-0298-4f8f-9430-6d44e87ac7b5@ondemand.saucelabs.com:80/wd/hub test'
+                sh 'mvn test'
             }
             post {
                 always {
@@ -33,19 +33,19 @@ pipeline {
     post {
         success {
             archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
-            emailext (
-                    subject: "SUCCESSFUL: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",
-                    body: """SUCCESSFUL: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]': Check console output at ${env.BUILD_URL}""",
-                    to: 'guillem@gromenaware.com'
-            )
+            //emailext (
+            //        subject: "SUCCESSFUL: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",
+            //        body: """SUCCESSFUL: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]': Check console output at ${env.BUILD_URL}""",
+            //        to: 'guillem@gromenaware.com'
+            //)
 
         }
         failure {
-            emailext (
-                    subject: "FAILED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",
-                    body: """FAILED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]': Check console output at ${env.BUILD_URL}""",
-                    to: 'guillem@gromenaware.com'
-            )
+            //emailext (
+            //        subject: "FAILED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",
+            //        body: """FAILED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]': Check console output at ${env.BUILD_URL}""",
+            //        to: 'guillem@gromenaware.com'
+            //)
         }
         always{
             // publish html
