@@ -1,13 +1,13 @@
 pipeline {
     agent any
     tools {
-        maven "maven_jenkins"
+        maven "maven_363"
         nodejs "nodejs"
     }
     stages {
         stage('Checkout') {
             steps {
-                git url: 'https://guillemhs@bitbucket.org/itnove/myexampleapp.git'
+                git url: 'https://github.com/agile611/ionic-example-app.git'
             }
         }
         stage('Clean') {
@@ -30,23 +30,6 @@ pipeline {
                 echo 'Tests here'
                 sh 'sleep 2m'
             }
-        }
-    }
-    post {
-        success {
-            emailext (
-                    subject: "SUCCESSFUL: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",
-                    body: """SUCCESSFUL: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]': Check console output at ${env.BUILD_URL}""",
-                    to: 'guillem@gromenaware.com'
-            )
-
-        }
-        failure {
-            emailext (
-                    subject: "FAILED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",
-                    body: """FAILED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]': Check console output at ${env.BUILD_URL}""",
-                    to: 'guillem@gromenaware.com'
-            )
         }
     }
 }
