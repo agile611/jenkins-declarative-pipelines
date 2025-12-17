@@ -48,6 +48,7 @@ pipeline {
             //)
         //}
         always{
+            junit '**/target/surefire-reports/TEST-*.xml'
             // publish html
             publishHTML target: [
                     allowMissing: false,
