@@ -7,10 +7,10 @@ Repositorio con ejemplos y plantillas de pipelines declarativos para Jenkins. Ú
 **Contenido rápido**
 - **Archivo:** [README.md](README.md)
 - **Ejemplos:** scripts de pipeline en Groovy listados más abajo
-- **Requisitos:** Jenkins 2.7+ y algunos plugins (ver sección)
+- **Requisitos:** Jenkins 2.0+ y algunos plugins (ver sección)
 
 **Requisitos**
-- **Jenkins:** 2.7 o superior
+- **Jenkins:** 2.0 o superior
 - **Plugins recomendados:**
 	- Pipeline: Declarative Agent API
 	- Build Pipeline Plugin
