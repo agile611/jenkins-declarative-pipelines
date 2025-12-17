@@ -22,5 +22,11 @@ pipeline{
                 sh 'terraform show -no-color tfplan'
             }   
         }   
+        stage('Aprobación manual'){
+            steps{
+                //Pausa la ejecución hasta que un usuario apruebe manualmente
+                input message: '¿Aprobar la aplicación de los cambios de Terraform?', ok: 'Sí, desplegar'
+            }
+        }
     }
 }
