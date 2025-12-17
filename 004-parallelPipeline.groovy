@@ -25,6 +25,40 @@ pipeline {
                 }
             }
         }
+        stage('Parallel Verification') {
+            parallel {
+                stage('Verify Stage 1') {
+                    steps {
+                        echo 'Verifying Stage 1'
+                    }
+                }
+                stage('Verify Stage 2') {
+                    steps {
+                        echo 'Verifying Stage 2'
+                    }
+                }
+                stage('Verify Stage 3') {
+                    steps {
+                        echo 'Verifying Stage 3'
+                    }
+                }
+                stage('Verify Stage 4') {
+                    steps {
+                        echo 'Verifying Stage 4'
+                    }
+                }
+                stage('Verify Stage 5') {
+                    steps {
+                        echo 'Verifying Stage 5'
+                    }
+                }
+                stage('Verify Stage 6') {
+                    steps {
+                        echo 'Verifying Stage 6'
+                    }
+                }
+            }
+        }
         stage('Teardown') {
             steps {
                 echo 'Cleaning up the environment...'
