@@ -1,5 +1,10 @@
 pipeline{
     agent any
+    
+    options{
+        timeout(time: 1, unit: 'MINUTES') //Limita la ejecución del pipeline a 1 minuto
+    }
+    
     stages{
         stage('Checkout codigo'){
             steps{
