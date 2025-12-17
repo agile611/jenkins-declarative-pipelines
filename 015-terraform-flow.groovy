@@ -33,5 +33,25 @@ pipeline{
                 input message: '¿Aprobar la aplicación de los cambios de Terraform?', ok: 'Sí, desplegar'
             }
         }
+        stage('Desplegar con Terraform'){
+            steps{
+                //Aplica los cambios según el plan guardado en 'tfplan'
+                sh 'terraform apply -auto-approve tfplan'
+            }
+        }
+        stage('Verificar despliegue'){
+            steps{
+                //Verifica el estado actual de los recursos gestionados por Terraform
+                sh 'terraform show'
+                sh 'ls -l mensaje.txt'
+                sh 'cat mensaje.txt'
+            }
+        }
+        stage('Destroy Terraform'){
+            steps{
+                //Destruye los recursos creados por Terraform
+                sh 'terraform destroy -auto-approve'
+            }
+        }   
     }
 }
