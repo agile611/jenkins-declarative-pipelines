@@ -12,7 +12,7 @@ pipeline {
         }
         stage('Clean') {
             steps {
-                sh 'killall node'
+                sh 'killall node || true'
             }
         }
         stage('Build') {
