@@ -24,15 +24,14 @@ pipeline {
         stage('Install ansible'){
             steps{
                 sh '${PYTHON} -m venv venv' // Crear entorno virtual
-                sh '. venv/bin/activate' // Activar entorno virtual
-                sh '${PYTHON} -m pip install --upgrade pip'
-                sh 'pip install ansible ansible-lint'
+                sh '. venv/bin/activate && ${PYTHON} -m pip install --upgrade pip'
+                sh '. venv/bin/activate && pip install ansible ansible-lint'
             }
         }
 
         stage('Ansible Version'){
             steps{
-                sh ' . venv/bin/activate && ansible --version'
+                sh '. venv/bin/activate && ansible --version'
             }
         }
     }
