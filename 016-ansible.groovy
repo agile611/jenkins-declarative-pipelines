@@ -19,7 +19,7 @@ pipeline {
 
         stage('Install ansible'){
             steps{
-                sh 'python -m pip install --upgrade pip'
+                sh 'python3 -m pip install --upgrade pip'
                 sh 'pip install ansible ansible-lint'
             }
         }
