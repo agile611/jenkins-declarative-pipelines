@@ -2,7 +2,7 @@ pipeline {
     tools{
         ansible 'ansible'
     }
-    agent pelado
+    agent label 'pelado'
     stages{
         stage('Ansible Version'){
             steps{
