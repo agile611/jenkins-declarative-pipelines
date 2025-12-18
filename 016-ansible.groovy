@@ -11,6 +11,19 @@ pipeline {
     }
 
     stages{
+        stage('Git Clone'){
+            steps{
+                git url: 'https://github.com/agile611/ansible-ci-example.git'
+            }
+        }
+
+        stage('Install ansible'){
+            steps{
+                sh 'python -m pip install --upgrade pip'
+                sh 'pip install ansible ansible-lint'
+            }
+        }
+
         stage('Ansible Version'){
             steps{
                 sh 'ansible --version'
