@@ -10,6 +10,10 @@ pipeline {
         ansible 'ansible' // Nombre de la instalación de Ansible en Jenkins
     }
 
+     environment {
+        PYTHON = 'python3' // Definir versión de Python
+    }
+
     stages{
         stage('Git Clone'){
             steps{
@@ -19,7 +23,8 @@ pipeline {
 
         stage('Install ansible'){
             steps{
-                sh 'python -m pip install --upgrade pip'
+                sh '${PYTHON} -m venv venv' // Crear entorno virtual
+                sh '${PYTHON} -m pip install --upgrade pip'
                 sh 'pip install ansible ansible-lint'
             }
         }
