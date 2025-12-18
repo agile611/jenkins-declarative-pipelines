@@ -14,6 +14,11 @@ pipeline {
         PYTHON = 'python3' // Definir versión de Python
     }
 
+    options{
+        timeout(time: 10, unit: 'MINUTES') //Limita la ejecución del pipeline a 10 minutos
+        timestamps() //Agrega timestamps a los logs para mejor seguimiento
+    }
+
     stages{
         stage('Git Clone'){
             steps{
