@@ -1,6 +1,8 @@
 pipeline {
-    agent label 'pelado'
-
+    agent {
+            label 'pelado'
+    }
+    
     tools{
         ansible 'ansible'
     }
