@@ -47,7 +47,7 @@ pipeline {
                 sh '. venv/bin/activate && ansible-lint playbooks/'
             }
         }
-
+        
         stage('Pasar Ansible Lint en nuestros Playbooks'){
             steps{
                 sh '. venv/bin/activate && ansible-playbook playbooks/site.yml -i localhost'
