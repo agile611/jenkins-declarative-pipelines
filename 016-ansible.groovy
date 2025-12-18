@@ -17,7 +17,7 @@ pipeline {
     stages{
         stage('Git Clone'){
             steps{
-                git url: 'https://github.com/agile611/ansible-ci-example.git'
+                git branch: 'main', 'https://github.com/agile611/ansible-ci-example.git' // Clonar repositorio con Playbooks de Ansible
             }
         }
 
